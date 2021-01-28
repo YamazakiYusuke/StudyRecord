@@ -1,0 +1,48 @@
+<h1>Study Times</h1>
+
+<%= form_with(model: StudyTime.new, local: true, url: {controller: 'study_times', action: 'create' }) do |form| %>
+
+  <div class="field">
+    <%= form.label "学習時間" %>
+    <%= form.number_field :time_length, step: '0.1' %>時間
+  </div>
+
+  <div class="field">
+    <%= form.label "学習日" %>
+    <%= form.date_field :date, value: Time.now.strftime("%Y-%m-%d") %>
+  </div>
+
+  <div class="field">
+    <%= form.label "コメント" %>
+    <%= form.text_area :comment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "送信" %>
+  </div>
+<% end %>
+
+<h3>合計学習日数: <%= @sum_date %></h3>
+<h3>合計学習時間: <%= @sum_time %>h</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>学習日</th>
+      <th>学習時間</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @study_times.each do |key, values| %>
+      <tr>
+        <td><%= key[0] %></td>
+        <td><%= values.sum { |hash| hash[:time_length]} %>h</td>
+        <td><%= link_to 'Show', study_time_path(key) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

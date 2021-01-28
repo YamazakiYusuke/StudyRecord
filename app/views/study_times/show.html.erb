@@ -1,0 +1,24 @@
+<h1><%= @date %></h1>
+<p>合計学習時間: <%= @study_times.sum { |hash| hash[:time_length]} %>h</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>学習時間</th>
+      <th>コメント</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @study_times.each do |v| %>
+      <tr>
+        <td><%= v.time_length %></td>
+        <td><%= v.comment %></td>
+        <td><%= link_to 'Edit', edit_study_time_path(v.id) %></td>
+        <td><%= link_to 'Destroy', study_time_path(v.id), method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

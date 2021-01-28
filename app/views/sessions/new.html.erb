@@ -1,0 +1,12 @@
+<div id="session-wrapper">
+    <p><%= image_tag "record.jpg" %></p>
+    <h1>Study Record</h1>
+    <%= form_with(scope: :session, url: sessions_path, local: true, class: "form-signin") do |f| %>
+        <ul>
+            <li><%= f.email_field :email, placeholder: "Email" %></li>
+            <li><%= f.password_field :password, placeholder: "Password" %></li>
+        </ul>
+        <%= f.submit "Login", id: "session-submit" %>
+    <% end %>
+    <p id="create_new"><%= link_to "Create new account", new_user_path %></p>
+</div>

@@ -1,0 +1,24 @@
+
+<%= form_with(model: user, local: true) do |f| %>
+  <ul>
+    <li>
+      <%= f.label "名前" %>
+      <%= f.text_field :name %>
+    </li> 
+
+    <li>
+      <%= f.label "メール" %>
+      <%= f.text_field :email %>
+    </li> 
+
+    <li>
+      <%= f.label "パスワード" %>
+      <%= f.password_field :password %>
+    </li> 
+    <li>
+      <%= f.label "パスワード確認" %>
+      <%= f.password_field :password_confirmation %>
+    </li> 
+    <li class="actions"><%= f.submit "送信"%></li>
+  </ul>
+<% end %>

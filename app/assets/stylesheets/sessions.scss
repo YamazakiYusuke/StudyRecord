@@ -1,0 +1,46 @@
+div#main div#session-wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+div#session-wrapper h1 {
+  font: italic 120px "Fira Sans", serif;
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+}
+
+div#session-wrapper p img {
+  width: 100%;
+  margin-top: 150px;
+  border: 3px solid rgba(155, 208, 243, 0.534);
+}
+
+form.form-signin ul li input {
+  width: 100%;
+  padding: 30px 30px;
+  font-size: 60px;
+  margin-top: 80px;
+}
+
+form.form-signin input#session-submit {
+  margin: 200px auto 0 auto;
+  font-size: 100px;
+  display: block;
+  padding: 30px 200px;
+  border-radius: 80px;
+  text-decoration: none;
+  color: #FFF;
+  background-image: linear-gradient(45deg, #031804 0%, #000111 100%);
+  transition: .4s;
+}
+
+div#session-wrapper p#create_new {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+div#session-wrapper p#create_new a {
+  color: #fff;
+}

@@ -1,13 +1,9 @@
 <header>
   <% flash.each do |key, value| %>
-    <%= content_tag(:div, value, class: "#{key}") %>
+    <p><%= content_tag(:div, value, class: "#{key}") %></p>
   <% end %>
 
   <% if logged_in? %>
-    <%= current_user.name %>さん
-    <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-  <% else %>
-    <%= link_to "Sign up", new_user_path %>
-    <%= link_to "Login", new_session_path %>
+    <p><%= current_user.name %>さん</p>
   <% end %>
 </header>

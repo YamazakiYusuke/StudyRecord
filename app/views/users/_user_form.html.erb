@@ -1,5 +1,5 @@
 
-<%= form_with(model: user, local: true) do |f| %>
+<%= form_with(model: user, local: true, class: "user-form") do |f| %>
   <ul>
     <li>
       <%= f.label "名前" %>
@@ -19,6 +19,6 @@
       <%= f.label "パスワード確認" %>
       <%= f.password_field :password_confirmation %>
     </li> 
-    <li class="actions"><%= f.submit "送信"%></li>
+    <li class="actions"><%= f.submit "Submit", id: "user-submit" %></li>
   </ul>
 <% end %>

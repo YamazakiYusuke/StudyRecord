@@ -1,4 +1,7 @@
-<h1>アカウント登録</h1>
-<%= render 'user_form', user: @user %>
-
+<div id="sign-up-wrapper">
+  <p><%= image_tag "record.jpg" %></p>
+  <h1>Sign up</h1>
+  <%= render 'user_form', user: @user %>
+  <p id="login"><%= link_to "Login", new_session_path %></p>
+</div>
 

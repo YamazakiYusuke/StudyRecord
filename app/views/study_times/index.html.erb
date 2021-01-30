@@ -1,48 +1,34 @@
-<h1>Study Times</h1>
+<div id="study-time-wrapper">
+  <h1>合計学習日数: <%= @sum_date %></h1>
+  <h1>合計学習時間: <%= @sum_time %>h</h1>
 
-<%= form_with(model: StudyTime.new, local: true, url: {controller: 'study_times', action: 'create' }) do |form| %>
-
-  <div class="field">
-    <%= form.label "学習時間" %>
-    <%= form.number_field :time_length, step: '0.1' %>時間
+  <div id="each-day-time">
+      <% @study_times.each do |key, values| %>
+        <div class="cf">
+          <p><%= key[0] %></p>
+          <p><%= values.sum { |hash| hash[:time_length]} %>h</p>
+          <p><%= link_to 'Show more', study_time_path(key) %></p>
+        </div>
+      <% end %>
   </div>
 
-  <div class="field">
-    <%= form.label "学習日" %>
-    <%= form.date_field :date, value: Time.now.strftime("%Y-%m-%d") %>
-  </div>
+  <%= form_with(model: StudyTime.new, local: true, url: {controller: 'study_times', action: 'create' }) do |form| %>
 
-  <div class="field">
-    <%= form.label "コメント" %>
-    <%= form.text_area :comment %>
-  </div>
+    <div class="field">
+      <%= form.number_field :time_length, step: '0.1', placeholder: "学習時間(h)" %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit "送信" %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= form.date_field :date, value: Time.now.strftime("%Y-%m-%d"), placeholder: "学習日" %>
+    </div>
 
-<h3>合計学習日数: <%= @sum_date %></h3>
-<h3>合計学習時間: <%= @sum_time %>h</h3>
+    <div class="field">
+      <%= form.text_area :comment, placeholder: "コメント" %>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>学習日</th>
-      <th>学習時間</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
+    <div class="actions">
+      <%= form.submit "送信" %>
+    </div>
+  <% end %>
+</div>
 
-  <tbody>
-    <% @study_times.each do |key, values| %>
-      <tr>
-        <td><%= key[0] %></td>
-        <td><%= values.sum { |hash| hash[:time_length]} %>h</td>
-        <td><%= link_to 'Show', study_time_path(key) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>

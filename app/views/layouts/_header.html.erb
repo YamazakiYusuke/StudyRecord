@@ -1,5 +1,10 @@
 <header class="cf">
-  <p id="header-img"><%= image_tag "music_record_disc.png" %></p>
+  <p id="header-img">
+    <%= link_to study_times_path  do %>
+      <%= image_tag "music_record_disc.png" %>
+    <% end %>
+  </p>
+
   <% if logged_in? %>
     <p id="user-name"><%= current_user.name %>さん</p>
   <% end %>

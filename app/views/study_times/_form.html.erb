@@ -1,29 +1,15 @@
-<%= form_with(model: study_time, local: true) do |form| %>
-  <% if study_time.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(study_time.errors.count, "error") %> prohibited this study_time from being saved:</h2>
-
-      <ul>
-      <% study_time.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_with(model: StudyTime.new, local: true, url: {controller: 'study_times', action: 'create' }) do |form| %>
 
   <div class="field">
-    <%= form.label "学習時間" %>
-    <%= form.number_field :time_length, step: '0.1' %>時間
+    <%= form.number_field :time_length, step: '0.1', placeholder: "学習時間(h)" %>
   </div>
 
   <div class="field">
-    <%= form.label "学習日" %>
-    <%= form.date_field :date, value: Time.now.strftime("%Y-%m-%d") %>
+    <%= form.date_field :date, value: Time.now.strftime("%Y-%m-%d"), placeholder: "学習日" %>
   </div>
 
   <div class="field">
-    <%= form.label "何を学習したか" %>
-    <%= form.text_area :comment %>
+    <%= form.text_area :comment, placeholder: "コメント" %>
   </div>
 
   <div class="actions">

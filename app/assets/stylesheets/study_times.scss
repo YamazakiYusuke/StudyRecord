@@ -2,65 +2,81 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div#study-time-wrapper {
+/* ========================================
+    index
+========================================= */
+
+div#study-time-index-wrapper {
   width: 80%;
   color: #fff;
   margin: 90px auto 0 auto;
 }
 
-div#study-time-wrapper h1 {
+div#study-time-index-wrapper h1 {
   font-size: 80px;
   line-height: 100px;
   margin-top: 50px;
 }
 
-div#study-time-wrapper div#each-day-time {
+div#study-time-index-wrapper div#each-day-time {
   margin-top: 40px;
 }
 
-div#study-time-wrapper div#each-day-time p{
+div#study-time-index-wrapper div#each-day-time p{
   font-size: 47px;
   line-height: 120px;
   float: left;
   margin-right: 30px;
 }
 
-div#study-time-wrapper div#each-day-time p a {
+div#study-time-index-wrapper div#each-day-time p a {
   color: rgb(20, 24, 255);
 }
 
-div#study-time-wrapper form {
-  position: fixed;
+
+/* ========================================
+    show
+========================================= */
+
+div#study-time-show-wrapper {
   width: 80%;
-  bottom: 50px;
+  color: #fff;
+  margin: 90px auto 0 auto;
 }
 
-div#study-time-wrapper form input{
-  width: 50%;
-  font-size: 40px;
-  padding: 10px 20px;
-  margin-bottom: 20px;
+div#study-time-show-wrapper h1 {
+  font-size: 80px;
+  line-height: 100px;
+  margin-top: 50px;
 }
 
-div#study-time-wrapper form textarea {
-  width: 80%;
-  height: 120px;
-  font-size: 40px;
-  padding: 10px 20px;
-  margin-bottom: 20px;
+div#study-time-show-wrapper p {
+  font-size: 80px;
+  line-height: 100px;
+  margin-top: 30px;
 }
 
-div#study-time-wrapper form div.actions input {
-  position: relative;
-  display: inline-block;
-  padding: 0.25em 0.5em;
-  text-decoration: none;
-  color: #FFF;
-  background: #fd9535;/*色*/
-  border-radius: 4px;/*角の丸み*/
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
-  font-weight: bold;
-  border: solid 2px #d27d00;/*線色*/
-  width: 100%;
-  margin-top: 40px;
+div#study-time-show-wrapper table {
+  font-size: 50px;
+  margin-top: 100px;
+}
+
+div#study-time-show-wrapper table tr {
+  height: 70px;
+}
+
+div#study-time-show-wrapper table tr td.table-time {
+  width: 25%;
+}
+
+div#study-time-show-wrapper table tr td.table-comment {
+  width: 45%;
+}
+
+div#study-time-show-wrapper table tr td.table-del {
+  width: 15%;
+}
+
+div#study-time-show-wrapper table tr td.table-del a{
+  color: rgb(253, 82, 82);
 }
